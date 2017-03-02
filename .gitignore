@@ -1,2 +1,10 @@
+# Matlab object files
 .asv
+
+# Libraries
+
 lib/
+
+# Course token
+
+token.mat
