@@ -8,26 +8,22 @@ m = length(y); % number of training examples
 J_history = zeros(num_iters, 1);
 
 for iter = 1:num_iters
-
-    % ====================== YOUR CODE HERE ======================
-    % Instructions: Perform a single gradient step on the parameter vector
-    %               theta. 
-    %
-    % Hint: While debugging, it can be useful to print out the values
-    %       of the cost function (computeCost) and gradient here.
-    %
-
-
-
-
-
-
-
-    % ============================================================
-
+    % Save the cost J in every iteration    
+    feature_count = size(X,2);
+    tmp_theta = zeros(feature_count, 1);
+    
+    % use generalized form for multi-variate
+    for j = 1:feature_count
+        % calculate descent
+        desc = sum((X * theta - y) .* X(:, j));
+        tmp_theta(j) = theta(j) - alpha / m * desc;
+    end
+    
+    % replace values of theta
+    theta = tmp_theta;
+    
     % Save the cost J in every iteration    
     J_history(iter) = computeCost(X, y, theta);
-
 end
 
 end
