@@ -1,4 +1,4 @@
-% Basic operations 
+% Basic operations
 
 % arithmetic operations
 
@@ -20,7 +20,7 @@ xor(1,0) % logical XOR
 PS1('>> ');
 
 a = 3 % will output to console
-a = 3; % semi colon suppresses output 
+a = 3; % semi colon suppresses output
 
 % constants
 a = pi;
@@ -37,7 +37,7 @@ format short
 
 % Matrices
 
-A = [1 2; 3 4; 5 6]; % creates 3x2 a matrix  
+A = [1 2; 3 4; 5 6]; % creates 3x2 a matrix
 V = [1 2 3]; % creates row vector (1x3 matrix)
 V = [1;2;3]; % creates a column vector (3x1 matrix)
 
@@ -45,11 +45,11 @@ v = 1:0.1:2; % generates a row vector with elements as start:increment:end
 v = 1:6; % default increment is 1 will generate [1 2 3 4 5 6]
 
 C = ones(2, 3); % creates a 2x3 matrix initialized with ones
-w = zeros(1, 3); % creates a 1x3 matrix initialized with zeros 
-r = rand(3, 3); % creates a 3x3 matrix initialized with uniformtly 
+w = zeros(1, 3); % creates a 1x3 matrix initialized with zeros
+r = rand(3, 3); % creates a 3x3 matrix initialized with uniformtly
                 % distributed numbers between 0 and 1
-e = eye(3,3) % creates a 3x3 identity matrix 
-g = randn(2, 3); % sames as rand but numbers are normally distributed  
+e = eye(3,3) % creates a 3x3 identity matrix
+g = randn(2, 3); % sames as rand but numbers are normally distributed
 
 % miscellaneous
 
