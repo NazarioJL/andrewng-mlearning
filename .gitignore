@@ -2,6 +2,10 @@
 
 *.asv
 
+# Do not include data files
+
+*.mat
+
 # Libraries
 
 lib/
