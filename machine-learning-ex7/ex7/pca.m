@@ -5,27 +5,11 @@ function [U, S] = pca(X)
 %
 
 % Useful values
-[m, n] = size(X);
+[m, ~] = size(X);
 
-% You need to return the following variables correctly.
-U = zeros(n);
-S = zeros(n);
+% calculate co-variance matrix
+Sigma = (1/m) * (X')*X;
 
-% ====================== YOUR CODE HERE ======================
-% Instructions: You should first compute the covariance matrix. Then, you
-%               should use the "svd" function to compute the eigenvectors
-%               and eigenvalues of the covariance matrix. 
-%
-% Note: When computing the covariance matrix, remember to divide by m (the
-%       number of examples).
-%
-
-
-
-
-
-
-
-% =========================================================================
+[U, S, ~] = svd(Sigma);
 
 end

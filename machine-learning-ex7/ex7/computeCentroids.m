@@ -11,30 +11,18 @@ function centroids = computeCentroids(X, idx, K)
 %
 
 % Useful variables
-[m n] = size(X);
+[m, n] = size(X);
 
 % You need to return the following variables correctly.
 centroids = zeros(K, n);
 
-
-% ====================== YOUR CODE HERE ======================
-% Instructions: Go over every centroid and compute mean of all points that
-%               belong to it. Concretely, the row vector centroids(i, :)
-%               should contain the mean of the data points assigned to
-%               centroid i.
-%
-% Note: You can use a for-loop over the centroids to compute this.
-%
-
-
-
-
-
-
-
-
-% =============================================================
-
+for k = 1:K
+    indices = logical(idx == k);
+    % get all the rows that correspond to cluster by using logical indexing
+    % mean() will calculate a vector where each value is the corresponding
+    % mean of that column
+    centroids(k,:) = mean(X(indices, :));
+end
 
 end
 

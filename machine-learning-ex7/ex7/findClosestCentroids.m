@@ -20,14 +20,36 @@ idx = zeros(size(X,1), 1);
 %
 % Note: You can use a for-loop over the examples to compute this.
 %
+[m, ~] = size(X);
 
-
-
-
-
-
-
-% =============================================================
+for i = 1:m
+    min_distance = 0;
+    
+    % get current sample
+    x = X(i, :);
+    
+    % iterate each centroid with sample and find closest
+    for k = 1:K
+        % get current centroid to compare with
+        c = centroids(k, :);
+        
+        % calculate distance to current centroid
+        v = x - c;
+        d = sum(v .* v);
+        
+        % if sample is closer to current centroid we set the index of
+        % sample to it
+        if k == 1
+            min_distance = d;
+            idx(i) = k;
+        else
+            if d < min_distance
+                min_distance = d;
+                idx(i) = k;
+            end
+        end
+    end
+end
 
 end
 
